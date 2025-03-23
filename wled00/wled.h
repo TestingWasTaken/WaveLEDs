@@ -218,7 +218,7 @@ using PSRAMDynamicJsonDocument = BasicJsonDocument<PSRAM_Allocator>;
 #endif
 
 #ifndef WLED_PIN
-  #define WLED_PIN ""
+  #define WLED_PIN "12"
 #endif
 
 #ifndef SPIFFS_EDITOR_AIRCOOOKIE

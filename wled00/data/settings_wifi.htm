@@ -156,6 +156,10 @@ Static subnet mask:<br>
 			<button type="button" id="wifi_add" onclick="addWiFi()">+</button>
 			<button type="button" id="wifi_rem" onclick="remWiFi()">-</button><br>
 		</div>
+		DNS server address:<br>
+		<input name="D0" type="number" class="s" min="0" max="255" required>.<input name="D1" type="number" class="s" min="0" max="255" required>.<input name="D2" type="number" class="s" min="0" max="255" required>.<input name="D3" type="number" class="s" min="0" max="255" required><br>
+		<br>
+		mDNS address (leave empty for no mDNS):<br>
 		http:// <input type="text" name="CM" maxlength="32"> .local<br>
 		Client IP: <span class="sip"> Not connected </span> <br>
 		<h3>Configure Access Point</h3>
@@ -175,7 +179,8 @@ Static subnet mask:<br>
 		<h3>Experimental</h3>
 		Force 802.11g mode (ESP8266 only): <input type="checkbox" name="FG"><br>
 		Disable WiFi sleep: <input type="checkbox" name="WS"><br>
-	
+		<i>Can help with connectivity issues and Audioreactive sync.<br>
+		Disabling WiFi sleep increases power consumption.</i><br>
 		<div id="tx">TX power: <select name="TX">
 			<option value="78">19.5 dBm</option>
 			<option value="76">19 dBm</option>
@@ -190,6 +195,18 @@ Static subnet mask:<br>
 			<option value="8">2 dBm</option>
 		</select><br>
 		<i class="warn">WARNING: Modifying TX power may render device unreachable.</i>
+		</div>
+
+		<h3>ESP-NOW Wireless</h3>
+		<div id="NoESPNOW" class="hide">
+			<i class="warn">This firmware build does not include ESP-NOW support.<br></i>
+		</div>
+		<div id="ESPNOW">
+			Enable ESP-NOW: <input type="checkbox" name="RE"><br>
+			<i>Listen for events over ESP-NOW<br>
+			Keep disabled if not using a remote or wireless sync, increases power consumption.<br></i>
+			Paired Remote MAC: <input type="text" name="RMAC" minlength="12" maxlength="12"><br>
+			Last device seen: <span class="rlid" onclick="d.Sf.RMAC.value=this.textContent;" style="cursor:pointer;">None</span> <br>
 		</div>
 
 		<div id="ethd">

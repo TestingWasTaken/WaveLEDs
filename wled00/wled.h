@@ -27,7 +27,7 @@
 //#define WLED_DISABLE_HUESYNC     // saves 4kb
 //#define WLED_DISABLE_INFRARED    // saves 12kb, there is no pin left for this on ESP8266-01
 #ifndef WLED_DISABLE_MQTT
-  #define WLED_ENABLE_MQTT         // saves 12kb
+  #define WLED_ENABLE_MQTT         // saves kb
 #endif
 #ifndef WLED_DISABLE_ADALIGHT      // can be used to disable reading commands from serial RX pin (see issue #3128).
   #define WLED_ENABLE_ADALIGHT     // disable saves 5Kb (uses GPIO3 (RX) for serial). Related serial protocols: Adalight/TPM2, Improv, Serial JSON, Continuous Serial Streaming
@@ -218,7 +218,7 @@ using PSRAMDynamicJsonDocument = BasicJsonDocument<PSRAM_Allocator>;
 #endif
 
 #ifndef WLED_PIN
-  #define WLED_PIN "12"
+  #define WLED_PIN ""
 #endif
 
 #ifndef SPIFFS_EDITOR_AIRCOOOKIE
